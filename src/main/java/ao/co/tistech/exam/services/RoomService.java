@@ -16,10 +16,9 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class RoomService {
+    private static final Logger logger = LoggerFactory.getLogger(RoomService.class);
     final RoomRepository roomRepository;
     final ObjectMapper objectMapper;
-
-    private static final Logger logger = LoggerFactory.getLogger(RoomService.class);
 
     @Transactional
     public RoomDto save(RoomDto roomDto) throws Exception {

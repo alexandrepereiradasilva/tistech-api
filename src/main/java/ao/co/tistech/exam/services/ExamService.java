@@ -16,10 +16,9 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class ExamService {
+    private static final Logger logger = LoggerFactory.getLogger(ExamService.class);
     final ExamRepository examRepository;
     final ObjectMapper objectMapper;
-
-    private static final Logger logger = LoggerFactory.getLogger(ExamService.class);
 
     @Transactional
     public ExamDto save(ExamDto examDto) throws Exception {

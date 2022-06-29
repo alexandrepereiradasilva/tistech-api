@@ -16,10 +16,9 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class AvailabilityService {
+    private static final Logger logger = LoggerFactory.getLogger(AvailabilityService.class);
     final AvailabilityRepository availabilityRepository;
     final ObjectMapper objectMapper;
-
-    private static final Logger logger = LoggerFactory.getLogger(AvailabilityService.class);
 
     @Transactional
     public AvailabilityDto save(AvailabilityDto availabilityDto) throws Exception {

@@ -1,18 +1,20 @@
 package ao.co.tistech.exam.models;
 
 import lombok.*;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity(name = "exam")
 @Table(uniqueConstraints = {
-       @UniqueConstraint(name = "uk_exam_name", columnNames =  "name" )})
+        @UniqueConstraint(name = "uk_exam_name", columnNames = "name")})
 @Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@EnableJpaAuditing
 public class ExamModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
