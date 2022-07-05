@@ -19,13 +19,16 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/js/*", "/css/*",
-                        "/h2-console/**", "/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "swagger-resources/**").permitAll()
+                .antMatchers("/",
+                        "/h2-console", "/h2-console/**",
+                        "/swagger-ui.html", "/swagger-resources/configuration/**", "/webjars/**", "/swagger-resources/**", "/csrf/**", "/v2/api-docs").permitAll()
                 .anyRequest()
-                .permitAll()
+                .authenticated()
                 .and()
                 .httpBasic();
+        http.headers().frameOptions().disable();
     }
 
     @Autowired
