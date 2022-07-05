@@ -28,11 +28,11 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("API for certificate exam scheduling")
-                .description("Spring Boot REST API")
+                .description("Tis Tech - Spring Boot REST API")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                .contact(new Contact("Tistech", "https://www.tistech.co.ao/", "emailcomercial@tistech.co.ao "))
+                .contact(new Contact("Tistech", "https://www.tistech.co.ao/", "emailcomercial@tistech.co.ao"))
                 .build();
     }
 }

@@ -1,0 +1,11 @@
+databaseChangeLog:
+    - changeSet:
+        id: create-init-table
+        author: Alexandre
+        changes:
+          - sqlFile:
+              encoding: utf8
+              path: initial/create-initial-table.sql
+              relativeToChangelogFile: true
+              splitStatements: false
+              stripComments: false
